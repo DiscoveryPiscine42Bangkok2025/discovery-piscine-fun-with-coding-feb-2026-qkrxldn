@@ -5,4 +5,4 @@ else
     do
         mkdir "ex$arg"
     done
-fi
+fi 
