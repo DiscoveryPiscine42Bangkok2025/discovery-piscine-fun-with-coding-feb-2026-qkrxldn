@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.h1 {
+    display: block;
+}
+
+.card {
+    background-color: white;
+    width: 300px;           /* ความกว้างการ์ด */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* ใส่เงาให้ดูมีมิติ */
+    text-align: center;     /* จัดทุกอย่างกึ่งกลาง */
+    border-radius: 5px;     /* ขอบมน */
+    overflow: hidden;
+}
+
+.header-title {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.main-img {
+    width: 100%;            /* รูปกว้างเต็มการ์ด */
+    height: 300px;
+    object-fit: cover;      /* ตัดภาพให้พอดีไม่เบี้ยว */
+}
+
+.desc {
+    color: rgb(170, 170, 170);
+    font-weight: bold;
+}
+
+.social-table {
+    width: 100%;
+    border-collapse: collapse; /* ยุบขอบ */
+    margin-bottom: 20px;
+}
+
+.social-table td {
+    text-align: center;
+}
+
+.social-icon {
+    width: 20px; /* ขนาดไอคอน */
+    height: 20px;
+    cursor: pointer;
+}
+
+.contact-btn {
+    display: block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none; /* เอาขีดเส้นใต้ออก */
+}
+
+.contact-btn:hover {
+    background-color: #333; /* เปลี่ยนสีตอนชี้ */
+}
