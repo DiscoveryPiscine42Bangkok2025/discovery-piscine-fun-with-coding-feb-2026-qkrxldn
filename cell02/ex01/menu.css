@@ -1,47 +1,54 @@
-/* ตกแต่งปุ่มเมนูหลัก (ให้ดูน่ากินตามโจทย์) */
-.dropbtn {
-    background-color: #3498db; /* สีฟ้าสดใส */
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* กล่องคลุม (ต้องเป็น inline-block เพื่อให้เนื้อหาอยู่ติดกัน) */
-.dropdown {
-    position: relative;
+/* จัดกล่องให้อยู่ตรงกลางและดูดี */
+.menu-container {
     display: inline-block;
+    position: relative;
+    font-family: Arial, sans-serif; /* เปลี่ยนฟอนต์ให้อ่านง่าย */
 }
 
-/* --- ส่วนสำคัญที่สุด: การซ่อนและแสดง --- */
+/* ตกแต่งส่วนหัวเมนู (ปุ่ม) */
+.menu-header {
+    background-color: #007bff; /* สีฟ้าสดใส */
+    color: white;
+    padding: 15px 30px;        /* เพิ่มพื้นที่รอบตัวหนังสือ */
+    font-size: 18px;
+    border-radius: 5px;        /* ลบเหลี่ยมมุมให้มนๆ */
+    cursor: pointer;           /* เอาเมาส์ชี้แล้วเป็นรูปนิ้ว */
+}
 
-/* ปกติให้ซ่อนลิสต์รายการไว้ (display: none) */
-.dropdown-content {
-    display: none;
+/* ตกแต่งกล่องรายการ (ที่ซ่อนอยู่) */
+.menu-items {
+    display: none;             /* ซ่อนไว้ก่อน */
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* ใส่เงาให้ดูลอยออกมา */
-    z-index: 1;
+    background-color: white;
+    width: 100%;               /* กว้างเท่ากับส่วนหัว */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* ใส่เงาให้ดูลอยออกมา */
+    border-radius: 5px;
+    overflow: hidden;          /* เก็บขอบมนไม่ให้เนื้อหาล้น */
+    margin-top: 5px;           /* เว้นห่างจากปุ่มนิดนึง */
 }
 
-/* แต่ถ้ามีการเอาเมาส์ไป Hover ที่ .dropdown ให้เปลี่ยนเป็นโชว์ (display: block) */
-.dropdown:hover .dropdown-content {
+/* ตกแต่งลิงก์ข้างใน */
+.menu-items a {
     display: block;
-}
-
-/* --- ตกแต่งลิงก์ข้างใน --- */
-.dropdown-content a {
     color: black;
     padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: sans-serif;
+    text-decoration: none;     /* เอาขีดเส้นใต้ออก */
+    border-bottom: 1px solid #eee; /* เส้นคั่นบางๆ */
 }
 
-/* เปลี่ยนสีลิงก์ตอนเอาเมาส์ชี้ */
-.dropdown-content a:hover {
-    background-color: #ddd;
+/* เอฟเฟกต์ตอนเอาเมาส์ชี้ที่ลิงก์ */
+.menu-items a:hover {
+    background-color: #f1f1f1; /* เปลี่ยนสีพื้นหลัง */
+    color: #007bff;            /* เปลี่ยนสีตัวหนังสือ */
+}
+
+/* --- หัวใจสำคัญ --- */
+/* เอาเมาส์ชี้กล่องหลัก -> แสดงรายการ */
+.menu-container:hover .menu-items {
+    display: block;
+}
+
+/* เปลี่ยนสีปุ่มหลักตอนชี้ด้วย เพื่อความสมจริง */
+.menu-container:hover .menu-header {
+    background-color: #0056b3; /* สีเข้มขึ้นนิดนึง */
 }
