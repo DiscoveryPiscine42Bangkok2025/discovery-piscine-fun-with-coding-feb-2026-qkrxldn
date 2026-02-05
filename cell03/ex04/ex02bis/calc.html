@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ex02bis</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" id="left">
+    
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+
+    <input type="text" id="right">
+    
+    <input type="submit" id="btnCalc" value="Try me!">
+
+    <script>
+        $(document).ready(function() {
+            
+            setInterval(function() {
+                alert("Please, use me...");
+            }, 30000);
+
+            $("#btnCalc").click(function() {
+                var l = parseInt($("#left").val());
+                var r = parseInt($("#right").val());
+                var op = $("#op").val();
+
+                if (isNaN(l) || isNaN(r) || l < 0 || r < 0) {
+                    alert("Error :(");
+                    return;
+                }
+
+                if ((op == '/' || op == '%') && r == 0) {
+                    console.log("It's over 9000!");
+                    alert("It's over 9000!");
+                    return;
+                }
+
+                var res = 0;
+                if (op == '+') res = l + r;
+                if (op == '-') res = l - r;
+                if (op == '*') res = l * r;
+                if (op == '/') res = l / r;
+                if (op == '%') res = l % r;
+
+                console.log(res);
+                alert(res);
+            });
+        });
+    </script>
+</body>
+</html>
