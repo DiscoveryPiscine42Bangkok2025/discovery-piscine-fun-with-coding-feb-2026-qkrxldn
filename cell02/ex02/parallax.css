@@ -1,0 +1,36 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+.parallax-1, .parallax-2 {
+    min-height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-1 {
+    background-image: url("https://scontent.fbkk29-7.fna.fbcdn.net/v/t1.6435-9/92785473_957838774650405_1581524404267909120_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=oObJZd35v5IQ7kNvwE4UIFF&_nc_oc=AdmOPqa7hhUNr1lmgnqO6_q61HVnbP2u6hRg7HjExO-6zXOHzPMJtlQTyypcpikljwc&_nc_zt=23&_nc_ht=scontent.fbkk29-7.fna&_nc_gid=JRdth0x-g82_YkImJJxE0Q&oh=00_AftiphQgABZJDFnMA3a-9u98cwtyOqlDSQObJhUaDPxKVg&oe=69A95019");
+}
+
+.parallax-2 {
+    background-image: url("https://i.pinimg.com/474x/3b/df/ac/3bdfacf97556944434a5c284e17636cf.jpg");
+}
+
+.static-block {
+    height: 400px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message {
+    color: white;
+}
