@@ -1,18 +1,26 @@
-.mytable {
-    width: 100%; 
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%; 
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    height: 100%;
     border-collapse: collapse;
 }
 
 .fir_cell {
-    border: 1px solid black; 
-    height: 100px; 
-    width: 50%; 
-    background-color: #bdc985; /* สีเขียว */
+    border: 1px solid black;
+    width: 50%;
+    background-color: #bdc985;
 }
 
 .sec_cell {
     border: 1px solid black; 
-    height: 100px; 
     width: 50%; 
     background-color: #f7bca7;
 }
