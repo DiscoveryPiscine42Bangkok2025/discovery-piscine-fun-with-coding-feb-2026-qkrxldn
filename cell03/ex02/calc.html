@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ex02</title>
+</head>
+<body>
+    <input type="text" id="left">
+    
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+
+    <input type="text" id="right">
+    
+    <input type="submit" value="Try me!" onclick="calc()">
+
+    <script>
+        setInterval(function() {
+            alert("Please, use me...");
+        }, 30000);
+
+        function calc() {
+            var l = parseInt(document.getElementById("left").value);
+            var r = parseInt(document.getElementById("right").value);
+            var op = document.getElementById("op").value;
+
+            if (isNaN(l) || isNaN(r) || l < 0 || r < 0) {
+                alert("Error :(");
+                return;
+            }
+
+            if ((op == '/' || op == '%') && r == 0) {
+                console.log("It's over 9000!");
+                alert("It's over 9000!");
+                return;
+            }
+
+            var res = 0;
+            if (op == '+') res = l + r;
+            if (op == '-') res = l - r;
+            if (op == '*') res = l * r;
+            if (op == '/') res = l / r;
+            if (op == '%') res = l % r;
+
+            console.log(res);
+            alert(res);
+        }
+    </script>
+</body>
+</html>
