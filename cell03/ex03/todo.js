@@ -3,26 +3,18 @@ var list;
 window.onload = function() {
     list = document.getElementById("ft_list");
     
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        var c = cookies[i].trim();
-
-        if (c.indexOf("ft_list=") == 0) {
-            var val = c.substring(8);
-            if (val) {
-                var data = JSON.parse(decodeURIComponent(val));
-        
-                for (var j = data.length - 1; j >= 0; j--) {
-                    addTodo(data[j]);
-                }
-            }
+    var match = document.cookie.match(/ft_list=([^;]+)/);
+    if (match) {
+        var data = JSON.parse(decodeURIComponent(match[1]));
+        for (var i = data.length - 1; i >= 0; i--) {
+            addTodo(data[i]);
         }
     }
 }
 
 function newTodo() {
     var text = prompt("New task:");
-    if (text && text.trim() !== "") {
+    if (text && text.trim()) {
         addTodo(text);
         saveCookie();
     }
@@ -39,20 +31,15 @@ function addTodo(text) {
         }
     };
 
-    list.insertBefore(div, list.firstChild);
+    list.prepend(div);
 }
 
 function saveCookie() {
-    var todos = [];
-    var items = list.children;
-    
-    for (var i = 0; i < items.length; i++) {
-        todos.push(items[i].innerHTML);
-    }
+    var todos = Array.from(list.children).map(div => div.innerHTML);
     
     var json = JSON.stringify(todos);
-    
     var date = new Date();
     date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
-    document.cookie = "ft_list=" + encodeURIComponent(json) + "; expires=" + date.toUTCString() + "; path=/;";
+    
+    document.cookie = `ft_list=${encodeURIComponent(json)}; expires=${date.toUTCString()}; path=/`;
 }
