@@ -3,7 +3,6 @@ var list;
 window.onload = function() {
     list = document.getElementById("ft_list");
     
-
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
         var c = cookies[i].trim();
